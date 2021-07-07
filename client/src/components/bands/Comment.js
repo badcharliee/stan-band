@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import users from '../../apis/users';
 import '../../styles/styles.css';
@@ -7,7 +8,7 @@ class Comment extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { imageUrl: '' };
+    this.state = { imageUrl: '', isLiked: '' };
   }
 
   fetchImageUrl = async () => {
@@ -17,6 +18,32 @@ class Comment extends React.Component {
 
   componentDidMount() {
     this.fetchImageUrl();
+
+    if (this.props.currentUser) {
+      // check if currentUser likes comment
+      this.setState({ isLiked: true });
+    } else {
+      this.setState({ isLiked: false });
+    }
+
+  }
+
+  onLikeButtonClick = () => {
+    this.setState({ isLiked: !this.state.isLiked });
+  }
+
+  renderLikeIcon = () => {
+
+    if (!this.state.isLiked) {
+      return (
+        <i onClick={this.onLikeButtonClick} className="heart outline icon">   {this.props.comment.upvotes}   </i>
+      );
+    }
+
+    return (
+      <i onClick={this.onLikeButtonClick} className="heart icon">   {this.props.comment.upvotes}   </i>
+    );
+
   }
 
   render() {
@@ -40,7 +67,7 @@ class Comment extends React.Component {
               </div>
             </div>
             <div className="commentLikeIcon">
-              <i className="heart icon">   {comment.upvotes}   </i>
+              {this.renderLikeIcon()}
             </div>
           </div>
         </div>
@@ -51,4 +78,12 @@ class Comment extends React.Component {
 
 }
 
-export default Comment;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser.user
+  };
+};
+
+export default connect(
+  mapStateToProps
+)(Comment);
