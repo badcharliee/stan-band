@@ -75,7 +75,7 @@ class Band extends React.Component {
         <div className="commentCards">
           {comments.map(comment => {
             return (
-              <Comment key={comment.id} comment={comment} />
+              <Comment key={comment.uuid} comment={comment} />
             );
           })}
         </div>
@@ -111,11 +111,11 @@ class Band extends React.Component {
         <div className="ui header" style={{ color: 'white' }}>Comment Thread</div>
         <div className="ui segment">
           <div className="ui form">
-            {/*<div className="field">
+            {<div className="field">
               <label>Leave a comment</label>
               <textarea onChange={(e) => this.onNewCommentChange(e)} value={this.props.newComment ? this.props.newComment : ""} rows="2"></textarea>
-            </div>*/}
-            {/*<div onClick={this.onAddCommentClick} className="ui submit primary button">Add Comment</div>*/}
+            </div>}
+            {<div onClick={this.onAddCommentClick} className="ui submit black button" style={{ marginBottom: '20px' }}>Add Comment</div>}
           </div>
           {this.renderComments()}
         </div>

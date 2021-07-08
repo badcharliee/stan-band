@@ -25,3 +25,5 @@ export const DELETE_USER = 'DELETE_USER';
 
 /* comment action creators */
 export const NEW_COMMENT_CHANGE = 'NEW_COMMENT_CHANGE';
+export const LIKE_COMMENT = 'LIKE_COMMENT';
+export const UNLIKE_COMMENT = 'UNLIKE_COMMENT';

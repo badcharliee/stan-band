@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import spotify from '../apis/spotify';
 import bands from '../apis/bands';
 import users from '../apis/users';
@@ -21,7 +23,9 @@ import {
   CREATE_USER,
   EDIT_USER,
   DELETE_USER,
-  NEW_COMMENT_CHANGE
+  NEW_COMMENT_CHANGE,
+  LIKE_COMMENT,
+  UNLIKE_COMMENT
 } from './types';
 
 /* spotify api action creators */
@@ -160,6 +164,32 @@ export const newCommentChange = (commentValue) => async dispatch => {
   dispatch({ type: NEW_COMMENT_CHANGE, payload: commentValue });
 }
 
+export const likeComment = comment => async (dispatch, getState) => {
+  const userId = getState().currentUser.user.userId;
+  const commentLikers = [ ...comment.likers, userId ];
+  const editedComment = { ...comment, likers: commentLikers };
+
+  const filteredComments = getState().bandSearch.selected.comments.filter(cmt => cmt.uuid !== comment.uuid);
+  const editedComments = [ editedComment, ...filteredComments ];
+
+  const bandId = getState().bandSearch.selected.id;
+  const band = { ...getState().bandSearch.selected, comments: editedComments };
+  dispatch(editBand(band, bandId));
+}
+
+export const unlikeComment = comment => async (dispatch, getState) => {
+  const userId = getState().currentUser.user.userId;
+  const commentLikers = comment.likers.filter(liker => liker !== userId);
+  const editedComment = { ...comment, likers: commentLikers };
+
+  const filteredComments = getState().bandSearch.selected.comments.filter(cmt => cmt.uuid !== comment.uuid);
+  const editedComments = [ editedComment, ...filteredComments ];
+
+  const bandId = getState().bandSearch.selected.id;
+  const band = { ...getState().bandSearch.selected, comments: editedComments };
+  dispatch(editBand(band, bandId));
+}
+
 export const addNewComment = () => async (dispatch, getState) => {
 
   const commentValue = getState().bandSearch.newComment;
@@ -177,6 +207,7 @@ export const addNewComment = () => async (dispatch, getState) => {
     return;
   }
   // construct band comment object
+  const uuid = uuidv4();
   const timePosted = new Date().toUTCString();
   const spotifyUserId = currentUser.userId;
   const upvotes = 1;
@@ -184,11 +215,11 @@ export const addNewComment = () => async (dispatch, getState) => {
   const body = commentValue;
 
   const bandComment = {
+    "uuid": uuid,
     "timePosted": timePosted,
     "userId": spotifyUserId,
-    "upvotes": upvotes,
-    "downvotes": downvotes,
-    "body": body
+    "body": body,
+    "likers": [ spotifyUserId ]
   };
 
   // add comment object to band
@@ -201,10 +232,9 @@ export const addNewComment = () => async (dispatch, getState) => {
   const spotifyBandId = getState().bandSearch.selected.spotifyBandId;
 
   const userComment = {
+    "uuid": uuid,
     "timePosted": timePosted,
     "bandId": spotifyBandId,
-    "upvotes": upvotes,
-    "downvotes": downvotes,
     "body": body
   };
 

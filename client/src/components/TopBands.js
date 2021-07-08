@@ -12,7 +12,8 @@ class TopBands extends React.Component {
   render() {
     return (
       <div>
-        <h2 className="ui header" style={{ color: 'white' }}>Top Bands</h2>
+        <div className="ui divider"></div>
+        <h2 className="ui black label header" style={{ color: 'white', marginTop: '10px', marginBottom: '20px', paddingLeft: '100px', paddingRight: '100px' }}>Top Bands</h2>
         <div className="ui stackable four column grid">
           <div className="row">
             <div className="column"><BandCard imagePath={alvvays} bandName="Alvvays" stanCount={1009} bandId="dummy" introducerUserId="dummy" /></div>

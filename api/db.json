@@ -7,29 +7,21 @@
         "0nJUwPwC9Ti4vvuJ0q3MfT",
         "1r1uxoy19fzMxunt3ONAkG",
         "0nJUwPwC9Ti4vvuJ0q3MfT",
-        "4EVpmkEwrLYEg6jIsiPMIb"
+        "4EVpmkEwrLYEg6jIsiPMIb",
+        "1r1uxoy19fzMxunt3ONAkG"
       ],
       "comments": [
         {
-          "timePosted": "Thu, 01 Jul 2021 19:30:52 GMT",
-          "bandId": "3kzwYV3OCB010YfXMF0Avt",
-          "upvotes": 1,
-          "downvotes": 0,
-          "body": "My faves :) lol i'm so goofy tongue out"
+          "uuid": "e02f1e93-643e-4891-9889-bb04ddadcde9",
+          "timePosted": "Wed, 07 Jul 2021 17:28:53 GMT",
+          "bandId": "4EVpmkEwrLYEg6jIsiPMIb",
+          "body": "I saw them when I was 16 and I hope I never forget it!"
         },
         {
-          "timePosted": "Tue, 06 Jul 2021 17:21:28 GMT",
-          "bandId": "4EVpmkEwrLYEg6jIsiPMIb",
-          "upvotes": 1,
-          "downvotes": 0,
-          "body": "reminds me of my sweaty gf"
-        },
-        {
-          "timePosted": "Tue, 06 Jul 2021 20:37:33 GMT",
-          "bandId": "4EVpmkEwrLYEg6jIsiPMIb",
-          "upvotes": 1,
-          "downvotes": 0,
-          "body": "hello from your biggets fan"
+          "uuid": "82ffdc37-e858-452d-86e0-9334de2cb6dc",
+          "timePosted": "Wed, 07 Jul 2021 22:22:38 GMT",
+          "bandId": "1r1uxoy19fzMxunt3ONAkG",
+          "body": "phoebe you're my fave"
         }
       ],
       "userId": "xsdonp8a5jcesmi8cctiwhajv",
@@ -42,11 +34,10 @@
       ],
       "comments": [
         {
-          "timePosted": "Fri, 02 Jul 2021 00:02:57 GMT",
+          "uuid": "15557b39-c63d-487e-a69c-42fdb3d5a358",
+          "timePosted": "Wed, 07 Jul 2021 18:14:52 GMT",
           "bandId": "4EVpmkEwrLYEg6jIsiPMIb",
-          "upvotes": 1,
-          "downvotes": 0,
-          "body": "ew this remind me of my cool bf"
+          "body": "hello :)"
         }
       ],
       "userId": "mandyandcats",
@@ -64,21 +55,13 @@
       "stans": [
         "xsdonp8a5jcesmi8cctiwhajv"
       ],
-      "comments": [
-        {
-          "timePosted": "Thu, 01 Jul 2021 19:30:52 GMT",
-          "userId": "xsdonp8a5jcesmi8cctiwhajv",
-          "upvotes": 1,
-          "downvotes": 0,
-          "body": "My faves :) lol i'm so goofy tongue out"
-        }
-      ]
+      "comments": []
     },
     {
       "id": 4,
       "spotifyBandId": "4EVpmkEwrLYEg6jIsiPMIb",
       "name": "Fleet Foxes",
-      "stanCount": 1,
+      "stanCount": 2,
       "profileImage": "https://i.scdn.co/image/ebf515962abdb0a61c6bfeb26ceea6c629b9e756",
       "introducerUserId": "mandyandcats",
       "stans": [
@@ -87,25 +70,23 @@
       ],
       "comments": [
         {
-          "timePosted": "Fri, 02 Jul 2021 00:02:57 GMT",
+          "uuid": "15557b39-c63d-487e-a69c-42fdb3d5a358",
+          "timePosted": "Wed, 07 Jul 2021 18:14:52 GMT",
           "userId": "mandyandcats",
-          "upvotes": 1,
-          "downvotes": 0,
-          "body": "ew this remind me of my cool bf"
+          "body": "hello :)",
+          "likers": [
+            "mandyandcats",
+            "xsdonp8a5jcesmi8cctiwhajv"
+          ]
         },
         {
-          "timePosted": "Tue, 06 Jul 2021 17:21:28 GMT",
+          "uuid": "e02f1e93-643e-4891-9889-bb04ddadcde9",
+          "timePosted": "Wed, 07 Jul 2021 17:28:53 GMT",
           "userId": "xsdonp8a5jcesmi8cctiwhajv",
-          "upvotes": 1,
-          "downvotes": 0,
-          "body": "reminds me of my sweaty gf"
-        },
-        {
-          "timePosted": "Tue, 06 Jul 2021 20:37:33 GMT",
-          "userId": "xsdonp8a5jcesmi8cctiwhajv",
-          "upvotes": 1,
-          "downvotes": 0,
-          "body": "hello from your biggets fan"
+          "body": "I saw them when I was 16 and I hope I never forget it!",
+          "likers": [
+            "mandyandcats"
+          ]
         }
       ]
     },
@@ -144,6 +125,28 @@
       ],
       "comments": [],
       "id": 7
+    },
+    {
+      "spotifyBandId": "1r1uxoy19fzMxunt3ONAkG",
+      "name": "Phoebe Bridgers",
+      "stanCount": 1,
+      "profileImage": "https://i.scdn.co/image/ab6761610000e5eb626686e362d30246e816cc5b",
+      "introducerUserId": "xsdonp8a5jcesmi8cctiwhajv",
+      "stans": [
+        "xsdonp8a5jcesmi8cctiwhajv"
+      ],
+      "comments": [
+        {
+          "uuid": "82ffdc37-e858-452d-86e0-9334de2cb6dc",
+          "timePosted": "Wed, 07 Jul 2021 22:22:38 GMT",
+          "userId": "xsdonp8a5jcesmi8cctiwhajv",
+          "body": "phoebe you're my fave",
+          "likers": [
+            "xsdonp8a5jcesmi8cctiwhajv"
+          ]
+        }
+      ],
+      "id": 8
     }
   ]
 }

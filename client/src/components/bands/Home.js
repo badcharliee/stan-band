@@ -18,7 +18,7 @@ class Home extends React.Component {
             spotifyBandId={result.spotifyBandId}
             bandName={result.name}
             isFollowing={result.isFollowing}
-            stanCount={result.stanCount}
+            stanCount={result.stans.length}
             spotifyBandId={result.spotifyBandId}
             introducerUserId={result.introducerUserId}
             stans={result.stans}
@@ -46,7 +46,8 @@ class Home extends React.Component {
             <span> Introduce a band to the site.</span>
           </Link>
         </div>
-        <h2 className="ui header" style={{ color: 'white' }}>Search Results</h2>
+        <div className="ui divider"></div>
+        <h2 className="ui black label header" style={{ color: 'white', marginTop: '10px', marginBottom: '20px', paddingLeft: '100px', paddingRight: '100px' }}>Search Results</h2>
         <div className="ui stackable grid">
           {this.renderSearchResults()}
         </div>
