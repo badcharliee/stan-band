@@ -7,8 +7,8 @@
         "0nJUwPwC9Ti4vvuJ0q3MfT",
         "1r1uxoy19fzMxunt3ONAkG",
         "0nJUwPwC9Ti4vvuJ0q3MfT",
-        "4EVpmkEwrLYEg6jIsiPMIb",
-        "1r1uxoy19fzMxunt3ONAkG"
+        "1r1uxoy19fzMxunt3ONAkG",
+        "4EVpmkEwrLYEg6jIsiPMIb"
       ],
       "comments": [
         {
@@ -89,30 +89,6 @@
           ]
         }
       ]
-    },
-    {
-      "spotifyBandId": "0nJUwPwC9Ti4vvuJ0q3MfT",
-      "name": "John Prine",
-      "stanCount": 1,
-      "profileImage": "https://i.scdn.co/image/ab6761610000e5eb9a2b5dddb0fde64eac2ee690",
-      "introducerUserId": "xsdonp8a5jcesmi8cctiwhajv",
-      "stans": [
-        "xsdonp8a5jcesmi8cctiwhajv"
-      ],
-      "comments": [],
-      "id": 5
-    },
-    {
-      "spotifyBandId": "1r1uxoy19fzMxunt3ONAkG",
-      "name": "Phoebe Bridgers",
-      "stanCount": 1,
-      "profileImage": "https://i.scdn.co/image/ab6761610000e5eb626686e362d30246e816cc5b",
-      "introducerUserId": "xsdonp8a5jcesmi8cctiwhajv",
-      "stans": [
-        "xsdonp8a5jcesmi8cctiwhajv"
-      ],
-      "comments": [],
-      "id": 6
     },
     {
       "spotifyBandId": "0nJUwPwC9Ti4vvuJ0q3MfT",

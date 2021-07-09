@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import SearchDatabase from '../search/SearchDatabase';
-import TopBands from '../TopBands';
+import NewlyAddedBands from '../NewlyAddedBands';
 import BandCard from '../BandCard';
 import '../../styles/styles.css';
 
@@ -19,7 +19,6 @@ class Home extends React.Component {
             bandName={result.name}
             isFollowing={result.isFollowing}
             stanCount={result.stans.length}
-            spotifyBandId={result.spotifyBandId}
             introducerUserId={result.introducerUserId}
             stans={result.stans}
             comments={result.comments}
@@ -35,7 +34,7 @@ class Home extends React.Component {
   renderBands() {
 
     if (!this.props.searchResults) {
-      return <TopBands />;
+      return <NewlyAddedBands />;
     }
 
     return (

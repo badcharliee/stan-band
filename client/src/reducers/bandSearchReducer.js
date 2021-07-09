@@ -3,14 +3,16 @@ import {
   SEARCH_BANDS,
   BAND_SELECTED,
   EDIT_BAND,
-  NEW_COMMENT_CHANGE
+  NEW_COMMENT_CHANGE,
+  FETCH_NEW_BANDS
 } from '../actions/types';
 
 const INTIAL_STATE = {
   value: null,
   results: null,
   selected: null,
-  newComment: null
+  newComment: null,
+  newBands: null
 };
 
 const bandSearchReducer = (state = INTIAL_STATE, action) => {
@@ -25,6 +27,8 @@ const bandSearchReducer = (state = INTIAL_STATE, action) => {
       return { ...state, selected: action.payload };
     case NEW_COMMENT_CHANGE:
       return { ...state, newComment: action.payload };
+    case FETCH_NEW_BANDS:
+      return { ...state, newBands: action.payload };
     default:
       return state;
   }

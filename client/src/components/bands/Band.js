@@ -1,9 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { stanBand, unstanBand, newCommentChange, addNewComment } from '../../actions';
+import {
+  stanBand,
+  unstanBand,
+  newCommentChange,
+  addNewComment,
+  stanSelected
+ } from '../../actions';
 import users from '../../apis/users';
-import Comment from './Comment';
+import BandProfileComment from '../comments/BandProfileComment';
 
 class Band extends React.Component {
   constructor(props) {
@@ -75,7 +82,7 @@ class Band extends React.Component {
         <div className="commentCards">
           {comments.map(comment => {
             return (
-              <Comment key={comment.uuid} comment={comment} />
+              <BandProfileComment key={comment.uuid} comment={comment} />
             );
           })}
         </div>
@@ -103,7 +110,14 @@ class Band extends React.Component {
           <div className="ui clearing divider"></div>
           <img className="ui centered medium rounded image" src={this.props.currentBand.profileImage} alt={this.props.currentBand.name} />
           <div className="ui center aligned">
-            <div className="ui black label" style={{ margin: '12px' }}>Introduced by <div className="detail">{this.props.currentBand.introducerUserId}</div></div>
+            <Link onClick={() => this.props.stanSelected(this.props.currentBand.introducerUserId)} to="/stan">
+              <div className="ui black label" style={{ margin: '12px' }}>
+                Introduced by
+                <div className="detail">
+                  {this.props.currentBand.introducerUserId}
+                </div>
+              </div>
+            </Link>
             <img className="ui centered mini circular image" src={this.state.imageUrl} alt="Introducer Profile"/>
           </div>
         </div>
@@ -142,6 +156,7 @@ export default connect(
     stanBand,
     unstanBand,
     newCommentChange,
-    addNewComment
+    addNewComment,
+    stanSelected
   }
 )(Band);

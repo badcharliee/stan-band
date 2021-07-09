@@ -11,6 +11,7 @@ import {
   SEARCH_SPOTIFY,
   FETCH_BANDS,
   FETCH_BAND_BY_ID,
+  FETCH_NEW_BANDS,
   CREATE_BAND,
   EDIT_BAND,
   DELETE_BAND,
@@ -23,9 +24,8 @@ import {
   CREATE_USER,
   EDIT_USER,
   DELETE_USER,
-  NEW_COMMENT_CHANGE,
-  LIKE_COMMENT,
-  UNLIKE_COMMENT
+  STAN_SELECTED,
+  NEW_COMMENT_CHANGE
 } from './types';
 
 /* spotify api action creators */
@@ -109,6 +109,12 @@ export const fetchBand = id => async dispatch => {
   const response = await bands.get(`/${id}`);
 
   dispatch({ type: FETCH_BAND_BY_ID, payload: response.data });
+}
+
+export const fetchNewBands = () => async dispatch => {
+  const response = await bands.get('?_sort=id&_start=0&_end=4&_order=desc');
+
+  dispatch({ type: FETCH_NEW_BANDS, payload: response.data });
 }
 
 export const createBand = band => async (dispatch, getState) => {
@@ -210,8 +216,6 @@ export const addNewComment = () => async (dispatch, getState) => {
   const uuid = uuidv4();
   const timePosted = new Date().toUTCString();
   const spotifyUserId = currentUser.userId;
-  const upvotes = 1;
-  const downvotes = 0;
   const body = commentValue;
 
   const bandComment = {
@@ -264,6 +268,18 @@ export const fetchUserByUserId = () => async (dispatch, getState) => {
     // user does not exist... add them to the database
     console.log('user does not exist... create user');
     dispatch(createUser({ imageUrl, stanning: [], comments: [] }));
+  }
+
+}
+
+export const stanSelected = userId => async dispatch => {
+  const response = await users.get(`?userId=${userId}`);
+
+  // if user exists
+  if (response.data.length > 0) {
+    dispatch({ type: STAN_SELECTED, payload: response.data[0] });
+  } else {
+    // user does not exist... handle an error
   }
 
 }

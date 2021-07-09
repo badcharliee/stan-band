@@ -36,12 +36,14 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="ui secondary pointing menu">
-        <Link to="/" className="item">
+      <div className="ui inverted secondary pointing menu">
+        <Link to="/" className="active item">
           <h3 className="ui header" style={{ color: 'white' }}>StanBand</h3>
         </Link>
         <div className="right menu">
-          {this.renderAuthButton()}
+          <div className="item">
+            {this.renderAuthButton()}
+          </div>
         </div>
       </div>
     );

@@ -48,7 +48,7 @@ class BandCard extends React.Component {
         <Link onClick={() => this.props.bandSelected(this.band)} to="/band">
 
           <div className="bandCard">
-            <img className="profileImage" src={imagePath} />
+            <img className="profileImage" src={imagePath} alt="Profile" />
             <h4 className="bandName">
               <b>{bandName}</b>
             </h4>

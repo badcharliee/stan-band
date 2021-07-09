@@ -8,6 +8,7 @@ export const SEARCH_SPOTIFY = 'SEARCH_SPOTIFY';
 /* bands api types */
 export const FETCH_BANDS = 'FETCH_BANDS';
 export const FETCH_BAND_BY_ID = 'FETCH_BAND_BY_ID';
+export const FETCH_NEW_BANDS = 'FETCH_NEW_BANDS';
 export const CREATE_BAND = 'CREATE_BAND';
 export const EDIT_BAND = 'EDIT_BAND';
 export const DELETE_BAND = 'DELETE_BAND';
@@ -22,6 +23,7 @@ export const FETCH_USER_BY_ID = 'FETCH_USER_BY_ID';
 export const CREATE_USER = 'CREATE_USER';
 export const EDIT_USER = 'EDIT_USER';
 export const DELETE_USER = 'DELETE_USER';
+export const STAN_SELECTED = 'STAN_SELECTED';
 
 /* comment action creators */
 export const NEW_COMMENT_CHANGE = 'NEW_COMMENT_CHANGE';
